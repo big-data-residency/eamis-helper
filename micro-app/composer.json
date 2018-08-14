@@ -1,0 +1,15 @@
+{
+    "require": {
+        "yiisoft/yii2": "~2.0.0",
+        "vlucas/phpdotenv": "^2.5"
+    },
+    "require-dev": {
+        "yiisoft/yii2-gii": "~2.0.0"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
