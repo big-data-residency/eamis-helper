@@ -25,11 +25,8 @@
 ## 文件目录
 
 > |-- micro-app                                      // yii 后端代码
-
 > |   |-- README.md                            // 后端代码说明
-
 > |-- vue                                        	     // vue 前端代码
-
 > |   |-- README.md                            // 前端代码说明
 > .
 
