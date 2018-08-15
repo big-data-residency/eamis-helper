@@ -12,7 +12,7 @@
 5. 项目启动
    1. 开启`xampp`启动`Apache`、`mysql`开启`yii`后端（如果`mysql`已经通过其他方式启动就不用启动`mysql`了）
    2. 在`vue`目录下使用命令行执行`npm run dev`启动`vue`前端
-   3. 这时应该能够通过```http://localhost:8080```和`http://localhost/eamis-helper/micro-app/web/{ controllerName }/{ actionName }`来访问`vue`前端、和`vue`后端接口
+   3. 这时应该能够通过```http://localhost:8080```和`http://localhost/eamis-helper/micro-app/web/{ controllerName }/{ actionName }`来访问`vue`前端、和`yii`后端接口
 
 
 
