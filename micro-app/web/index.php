@@ -7,6 +7,11 @@ defined('YII_ENV') or define('YII_ENV', 'dev');
 // Composer vendor
 require(__DIR__ . '/../vendor/autoload.php');
 
+//// Swagger
+//$swagger = \Swagger\scan(__DIR__ . './../controllers');
+//header('Content-Type: application/json');
+//echo $swagger;
+
 // Environments
 require (__DIR__ . '/../environments/env.php');
 

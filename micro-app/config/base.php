@@ -14,7 +14,9 @@ return [
     'controllerNamespace' => 'app\controllers',
     // set an alias to enable autoloading of classes from the 'micro' namespace
     'aliases' => [
-        '@micro' => dirname(__DIR__),
+        '@app' => dirname(__DIR__),
         '@bower' => '@vendor/bower-asset',
+        '@apiRoot' => '@app/controllers',
+        '@webRoot' => '@app/web',
     ]
 ];

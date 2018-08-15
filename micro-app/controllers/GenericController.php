@@ -12,6 +12,10 @@ namespace app\controllers;
 use yii\filters\Cors;
 use yii\rest\ActiveController;
 
+/**
+ * Class GenericController
+ * @package app\controllers
+ */
 class GenericController extends ActiveController
 {
     public function behaviors()

@@ -21,7 +21,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '<controller:(post|comment|student)>' => '<controller>/index',
+//                '<controller:(post|comment|student)>' => '<controller>/index'
             ],
         ],
     ]
