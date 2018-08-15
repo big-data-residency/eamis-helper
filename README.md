@@ -7,7 +7,7 @@
    - 安装`npm`
    - 安装`Node.js`
 2. 将项目拷贝至`xampp`安装目录下的`htdocs`目录下
-3. 在`vue` 和`micro-app`目录下分别用命令行执行`npm install`安装所需的第三方插件
+3. 在`vue` 和`micro-app`目录下分别用命令行执行`npm install` `composer install`安装所需的第三方插件
 4. 把`.env`拷贝置`micro-app`目录下
 5. 项目启动
    1. 开启`xampp`启动`Apache`、`mysql`开启`yii`后端（如果`mysql`已经通过其他方式启动就不用启动`mysql`了）
