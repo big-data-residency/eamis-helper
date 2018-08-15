@@ -25,8 +25,11 @@
 ## 文件目录
 
 > |-- micro-app                                      // yii 后端代码
+
 > |   |-- README.md                            // 后端代码说明
+
 > |-- vue                                        	     // vue 前端代码
+
 > |   |-- README.md                            // 前端代码说明
 > .
 
@@ -34,7 +37,8 @@
 
 ## 学习资料
 
-- `vue`我也不知道
+- `vue`
+  - https://cn.vuejs.org/v2/guide/ 官方文档
 - `yii`
   - https://www.yiichina.com/doc/guide/2.0 官方文档
   - https://www.imooc.com/learn/404  一个基础的视频教程能让你快速能够写yii代码不过它包括了MVC三个模块，而我们只用了Model、Controller两个模块，关于接口的部分还得再找找
