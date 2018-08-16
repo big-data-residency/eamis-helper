@@ -24,14 +24,11 @@
 
 ## 文件目录
 
-> |-- micro-app                                      // yii 后端代码
-
-> |   |-- README.md                            // 后端代码说明
-
-> |-- vue                                        	     // vue 前端代码
-
-> |   |-- README.md                            // 前端代码说明
-> .
+> |-- micro-app                                      // yii 后端代码<br/>
+> |   |-- README.md                            // 后端代码说明<br/>
+> |-- vue                                        	     // vue 前端代码<br/>
+> |   |-- README.md                            // 前端代码说明<br/>
+> .<br/>
 
 
 
