@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import Test from '@/components/test.vue'
+  import Test from '@/components/test.vue';
 
   export default {
     name: 'App',

@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
   export default {
     name: 'Test',
     props: {
@@ -14,14 +15,13 @@
       }
     },
     data: function() {
-      return this.msg;
+      return {data: this.msg};
     },
     methods: {
       submit: function () {
-        console.log(1)
         this.$axios({
           type: 'get',
-          url: 'http://localhost/eamis-helper/micro-app/web/student/index',
+          url: '/student/index',
           data: {},
         })
       }

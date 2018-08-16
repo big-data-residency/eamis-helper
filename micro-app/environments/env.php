@@ -11,7 +11,7 @@ require_once (__DIR__ . '/../utils/utils.php');
 /**
  * load .env
  */
-$dotEnv = new \Dotenv\Dotenv(dirname(__DIR__));
+$dotEnv = new \Dotenv\Dotenv(dirname(__DIR__) . '/..');
 $dotEnv->load();
 
 /**

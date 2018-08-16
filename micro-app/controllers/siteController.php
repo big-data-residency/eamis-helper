@@ -34,4 +34,8 @@ class SiteController extends Controller{
         }
 //        echo $swagger;
     }
+
+    public function actionEnv(){
+	    var_dump($_ENV);
+    }
 }
