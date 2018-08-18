@@ -2,13 +2,18 @@
 
 namespace app\controllers;
 
-use yii\filters\Cors;
-use yii\rest\ActiveController;
-use yii\web\JsonParser;
+use app\models\Student;
 
 /**
  * Class StudentController
  * @package app\controllers
+ */
+
+/**
+ * @SWG\Tag(
+ *   name = "student",
+ *   description = "学生相关api"
+ * )
  */
 class StudentController extends GenericController {
     public $modelClass = 'app\models\Student';
@@ -26,6 +31,10 @@ class StudentController extends GenericController {
      * )
      */
     public function actionIndex(){
+        $temp = Student::find()->asArray()->one();
+        $response = \Yii::$app->response;
+        $response->content = $temp;
+        $response->format = 'json';
 
     }
 

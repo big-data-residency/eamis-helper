@@ -18,5 +18,40 @@ return [
         '@bower' => '@vendor/bower-asset',
         '@apiRoot' => '@app/controllers',
         '@webRoot' => '@app/web',
+        '@runtime' => '@app/runtime'
+    ],
+    'components' => [
+        'log' => [
+            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'targets' => [
+                'error' => [
+                    'class' => 'yii\log\FileTarget',
+                    'logFile' => '@runtime/logs/error.log',
+                    'levels' => ['error'],
+                    'logVars' => ['_GET', '_POST', '_FILE', '_COOKIE', '_SESSION']
+                ],
+                'warning' => [
+                    'class' => 'yii\log\FileTarget',
+                    'logFile' => '@runtime/logs/warning.log',
+                    'levels' => ['warning'],
+                    'logVars' => ['_GET', '_POST', '_FILE', '_COOKIE', '_SESSION']
+                ],
+                'info' => [
+                    'class' => 'yii\log\FileTarget',
+                    'logFile' => '@runtime/logs/info.log',
+                    'levels' => ['info'],
+                    'logVars' => [],
+                    'maxFileSize' => 40
+                ],
+//                把日志记录到数据库中
+//                'db' => [
+//                    'class' => 'yii\log\DbTarget',
+//                    'levels' => ['info', 'error']
+//                ]
+            ]
+        ],
+        'errorHandler' => [
+            'errorAction' => 'site/error'
+        ]
     ]
 ];

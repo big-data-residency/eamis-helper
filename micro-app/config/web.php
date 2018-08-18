@@ -6,23 +6,41 @@
  * Time: 15:39
  */
 
-return [
+$config = [
     'components' => [
         'request' => [
-            'cookieValidationKey' => '88_oT06Lji9-aPDoJEixtWRKr7z5v76K',
+            'cookieValidationKey' => env("COOKIE_VALIDATION_KEY"),
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ],
         ],
         'response' => [
-            'format' => 'json',
+            'class' => 'yii\web\Response',
+//            格式化输出内容
+            'on beforeSend' => function($event){
+                $response = $event->sender;
+                if($response->data !== null){
+                    $response->data = [
+                        'success' => $response->isSuccessful,
+                        'data' => $response->data
+                    ];
+                    $response->statusCode = 200;
+                }
+            },
+            'format' => yii\web\Response::FORMAT_JSON,
+            'charset' => 'UTF-8'
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-//                '<controller:(post|comment|student)>' => '<controller>/index'
+//                when enable strict parsing enable below
+//                'debug/<controller>/<action>' => 'debug/<controller>/<action>',
             ],
         ],
     ]
 ];
+
+
+
+return $config;

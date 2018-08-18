@@ -38,4 +38,16 @@ class SiteController extends Controller{
     public function actionEnv(){
 	    var_dump($_ENV);
     }
+
+    public function actionTest(){
+	    echo'<pre>';
+	    return `${1/0}`;
+    }
+
+    public function actionError(){
+        $exception = Yii::$app->errorHandler->exception;
+//	    \Yii::$app->response->content = $exception;
+        return $exception;
+
+    }
 }

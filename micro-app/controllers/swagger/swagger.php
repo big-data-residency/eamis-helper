@@ -25,12 +25,3 @@
  * )
  */
 
-
-/**
- * @SWG\Tag(
- *   name = "student",
- *   description = "学生相关api"
- * )
- *
- *
- */

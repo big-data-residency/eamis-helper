@@ -7,11 +7,6 @@ defined('YII_ENV') or define('YII_ENV', 'dev');
 // Composer vendor
 require(__DIR__ . '/../vendor/autoload.php');
 
-//// Swagger
-//$swagger = \Swagger\scan(__DIR__ . './../controllers');
-//header('Content-Type: application/json');
-//echo $swagger;
-
 // Environments
 require (__DIR__ . '/../environments/env.php');
 
@@ -30,6 +25,12 @@ if(YII_ENV_DEV){
 	$config['modules']['gii'] = [
 		'class' => 'yii\gii\Module',
 	];
+}
+if (YII_DEBUG) {
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module'
+    ];
 }
 
 (new yii\web\Application($config))->run();
