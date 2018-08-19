@@ -50,8 +50,10 @@ return [
 //                ]
             ]
         ],
-        'errorHandler' => [
-            'errorAction' => 'site/error'
-        ]
+
+//        'user' => [
+//            'identityClass' => 'app\models\Student'
+//        ]
+
     ]
 ];

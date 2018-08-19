@@ -15,27 +15,39 @@ $config = [
             ],
         ],
         'response' => [
-            'class' => 'yii\web\Response',
-//            格式化输出内容
-            'on beforeSend' => function($event){
+            'format' => \yii\web\Response::FORMAT_JSON,
+            'formatters' => [
+                \yii\web\Response::FORMAT_JSON => [
+                    'class' => 'yii\web\JsonResponseFormatter',
+                    'prettyPrint' => true,
+                    'encodeOptions' => JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
+                ]
+            ],
+            'on beforeSend' => function ($event) {
                 $response = $event->sender;
-                if($response->data !== null){
-                    $response->data = [
-                        'success' => $response->isSuccessful,
-                        'data' => $response->data
-                    ];
-                    $response->statusCode = 200;
+                if ($response->data != null) {
+                    if($response->format == \yii\web\Response::FORMAT_JSON || $response->format == \yii\web\Response::FORMAT_XML) {
+                        $response->data = yii\helpers\ArrayHelper::merge([
+                            'success' => $response->isSuccessful,
+                        ], $response->data);
+
+                        $response->statusCode = 200;
+                    }
                 }
-            },
-            'format' => yii\web\Response::FORMAT_JSON,
-            'charset' => 'UTF-8'
+            }
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
+            'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-//                when enable strict parsing enable below
-//                'debug/<controller>/<action>' => 'debug/<controller>/<action>',
+//               指明 siteController下的action
+                'site/<action>' => 'site/<action>',
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => ['teacher', 'student'],
+                    'pluralize' => false
+                ],
             ],
         ],
     ]

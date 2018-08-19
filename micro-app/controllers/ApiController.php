@@ -11,13 +11,15 @@ namespace app\controllers;
 
 use yii\filters\Cors;
 use yii\rest\ActiveController;
+use yii\web\Response;
 
 /**
- * Class GenericController
+ * Class ApiController
  * @package app\controllers
  */
-class GenericController extends ActiveController
+class ApiController extends ActiveController
 {
+
     public function behaviors()
     {
 
@@ -36,6 +38,18 @@ class GenericController extends ActiveController
                     'Access-Control-Allow-Credentials' => true,
                 ],
             ],
+            'contentNegotiator' => [
+                'formats' => [
+                    'text/html' => Response::FORMAT_JSON,
+                ]
+            ],
         ], $behaviors);
     }
+
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'data',
+    ];
+
+
 }

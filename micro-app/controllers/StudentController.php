@@ -15,14 +15,14 @@ use app\models\Student;
  *   description = "学生相关api"
  * )
  */
-class StudentController extends GenericController {
+class StudentController extends ApiController {
     public $modelClass = 'app\models\Student';
-    public $defaultAction = "index";
-    // behaviors is overwritten in app\GenericController
+    public $defaultAction = 'index';
+    // behaviors is overwritten in app\ApiController
 
     /**
      * @SWG\GET(
-     *     path="/student/index",
+     *     path="/student",
      *     tags={"student"},
      *     @SWG\Response(
      *         response="200",
@@ -31,16 +31,13 @@ class StudentController extends GenericController {
      * )
      */
     public function actionIndex(){
-        $temp = Student::find()->asArray()->one();
-        $response = \Yii::$app->response;
-        $response->content = $temp;
-        $response->format = 'json';
-
     }
+
 
     public function actionTest(){
         $response = \Yii::$app->response;
         $response->content = "test response from student controller by yii";
         $response->format = 'json';
     }
+
 }
