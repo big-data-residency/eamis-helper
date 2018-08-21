@@ -14,7 +14,7 @@ module.exports = {
     // Various Dev Server settings
     host: process.env.VUE_HOST || 'localhost', // can be overwritten by process.env.HOST
     port: process.env.VUE_PORT || 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: process.env.AUTO_OPEN_BROWSER || true,
+    autoOpenBrowser: process.env.AUTO_OPEN_BROWSER || false,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-

@@ -3,16 +3,24 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import axios from 'axios'
+
+import AdminLTE from '@/components/AdminLTE/AdminLTE';
+import Home from '@/components/Home';
+import StudentInfo from '@/components/StudentInfo';
 
 Vue.config.productionTip = false;
 // axios
 Vue.prototype.$axios = axios;
 axios.defaults.baseURL = process.env.AXIOS_BASE_URL;
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: {App},
-  template: '<App/>'
+  store,
+  components: {App, AdminLTE, Home, StudentInfo},
+  template: `<AdminLTE/>`
 });

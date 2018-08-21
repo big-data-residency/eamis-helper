@@ -19,9 +19,5 @@
 
 
 /**
- * @SWG\Info(
- *     title="eamis-helper API 说明文档",
- *     version="0.1"
- * )
+ * @SWG\Info(title="eamis-helper API 说明文档", version="0.1")
  */
-
