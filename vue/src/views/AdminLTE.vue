@@ -4,9 +4,9 @@
     <SideBar :menus="menus"/>
     <div class="content-wrapper">
       <section class="content-header">
-        EXAMPLE: HOME
+        {{ $route.name }}
+        <BreadCrumb></BreadCrumb>
       </section>
-      <!--<BreadCrumb></BreadCrumb>-->
       <section class="content">
         <router-view name="mainContent"></router-view>
       </section>
@@ -16,7 +16,6 @@
 
 <script>
 
-  // import "admin-lte/bower_components/jquery/dist/jquery";
   import "admin-lte/bower_components/bootstrap/dist/js/bootstrap";
   import "admin-lte/dist/js/adminlte";
 
@@ -27,18 +26,17 @@
 
 
   import {mapState} from "vuex";
-  import Vue from "vue";
 
-  import SideBar from "./SideBar";
-  import NaviBar from "./NaviBar";
-  // import BreadCrumb from "./BreadCrumb"；
+  import SideBar from "@/components/AdminLTE/SideBar";
+  import NaviBar from "@/components/AdminLTE/NaviBar";
+  import BreadCrumb from "@/components/AdminLTE/BreadCrumb";
 
   export default {
     name: "AdminLTE",
     components: {
       NaviBar,
       SideBar,
-      // BreadCrumb
+      BreadCrumb
     },
     data: function () {
       return {};

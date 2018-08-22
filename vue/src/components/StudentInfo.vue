@@ -41,38 +41,27 @@
         </div>
       </div>
       <div class="col-md-9">
-        <div class="nav-tabs-custom">
-          <ul class="nav nav-tabs">
-            <li>
-              <router-link to="/student-info/timeline">时间线</router-link>
-            </li>
-            <li>
-              <router-link to="/student-info/setting">设置</router-link>
-            </li>
-          </ul>
-          <div class="tab-content">
-            <router-view name="studentTab"></router-view>
-          </div>
-        </div>
-
+        <TabBar :tabs="studentTab"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import Timeline from './StudentTimeline';
-  import Setting from './StudentSetting';
+  import {mapState} from 'vuex';
+  import TabBar from "@/components/AdminLTE/TabBar";
 
   export default {
     name: "StudentInfo",
     components: {
-      Timeline,
-      Setting
+      TabBar
+    },
+
+    computed: {
+      ...mapState([
+        "studentTab"
+      ])
     }
   }
 </script>
 
-<style scoped>
-
-</style>

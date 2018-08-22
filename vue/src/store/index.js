@@ -29,6 +29,15 @@ export default new Vuex.Store({
         icon: "heart",
         text: "查看所有用户信息"
       }
+    ],
+    studentTab: [
+      {
+        link: '/student-info/timeline',
+        title: '时间线',
+      }, {
+        link: '/student-info/setting',
+        title: '设置',
+      }
     ]
   },
   getters: {

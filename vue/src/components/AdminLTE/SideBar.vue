@@ -20,16 +20,12 @@
           EAMIS-HELPER
         </li>
         <template v-for="(item, index) in menus">
-          <li :key="index">
-            <!--<a :href="item.path">-->
-            <!--<i :class="['fa', 'fa-' + item.icon]"></i>-->
-            <!--<span>{{ item.text }}</span>-->
-            <!--</a>-->
-            <router-link :to="item.path">
+          <router-link :to="item.path" :key="index" tag="li" active-class="active">
+            <a>
               <i :class="['fa', 'fa-' + item.icon]"></i>
               <span>{{ item.text }}</span>
-            </router-link>
-          </li>
+            </a>
+          </router-link>
         </template>
       </ul>
     </section>
@@ -41,17 +37,18 @@
     name: "SideBar",
     props: {
       menus: {
+        type: Array,
         default: function () {
           return [];
-        },
-        type: Array
+        }
       }
     },
     computed: {
       path: function () {
+        console.log(location);
         return location.pathname;
       }
-    }
+    },
   }
 </script>
 

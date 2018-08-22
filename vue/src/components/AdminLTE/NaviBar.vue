@@ -1,9 +1,9 @@
 <template>
   <header class="main-header">
-    <a href="index.html" class="logo">
+    <router-link to="/" class="logo">
       <span class="logo-mini">{{ logoMiniText }}</span>
       <span class="logo-lg">{{ logoText }}</span>
-    </a>
+    </router-link>
 
     <nav class="navbar navbar-static-top">
       <a class="sidebar-toggle" data-toggle="push-menu" role="button">

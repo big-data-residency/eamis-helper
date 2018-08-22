@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: "StudentTimeline"
+    name: "Timeline"
   }
 </script>
 
