@@ -6,12 +6,6 @@
           <router-link :to="item.link">{{ item.title }}</router-link>
         </li>
       </template>
-      <!--<li>-->
-      <!--<router-link to="/student-info/timeline">时间线</router-link>-->
-      <!--</li>-->
-      <!--<li>-->
-      <!--<router-link to="/student-info/setting">设置</router-link>-->
-      <!--</li>-->
     </ul>
     <div class="tab-content">
       <router-view name="studentTabContent"></router-view>

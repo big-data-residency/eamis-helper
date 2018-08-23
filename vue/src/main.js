@@ -8,8 +8,9 @@ import axios from 'axios'
 Vue.config.productionTip = false;
 // axios
 Vue.prototype.$axios = axios;
-axios.defaults.baseURL = process.env.AXIOS_BASE_URL;
+// axios.defaults.baseURL = process.env.AXIOS_BASE_URL;
 
+require('./mock');
 
 /* eslint-disable no-new */
 new Vue({

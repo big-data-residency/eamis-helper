@@ -14,7 +14,7 @@ Vue.use(Router);
  * @name string 页面名字
  * @path string 页面路径
  * @component(s) :{view-name: component}
- * @alias 用于调用默认渲染的组件
+ * @alias 用于调用默认渲染的组件 一般用''
  */
 const pathList = [
   {
@@ -52,13 +52,6 @@ const pathList = [
 const router = new Router({
   routes: pathList,
   mode: 'history'
-});
-
-const crumbList = [];
-
-router.beforeEach((to, from, next) => {
-  to.meta.crumbList = to.matched;
-  next()
 });
 
 export default router;

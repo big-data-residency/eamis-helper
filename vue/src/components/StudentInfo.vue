@@ -61,7 +61,28 @@
       ...mapState([
         "studentTab"
       ])
-    }
+    },
+
+    mounted: function(){
+      console.log("send");
+      this.getMockData();
+    },
+
+    methods: {
+      getMockData: function () {
+        this.$axios({
+          url: '/mock/example',
+          type: 'get',
+          data: {
+            omg: 'yes'
+          },
+        }).then((res) => console.log(res))
+      },
+    },
+
+
+
+
   }
 </script>
 
