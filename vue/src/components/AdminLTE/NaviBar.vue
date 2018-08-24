@@ -33,12 +33,12 @@
           </li>
           <li class="dropdown user user-menu">
             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="./../../assets/default-avatar.jpg" class="user-image" alt="User Image">
+              <img src="/static/images/avatars/default.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">EXAMPLE: USERNAME<!-- TODO --></span>
             </a>
             <ul class="dropdown-menu">
               <li class="user-header">
-                <img src="./../../assets/default-avatar.jpg" class="img-circle" alt="User Image">
+                <img src="/static/images/avatars/default.jpg" class="img-circle" alt="User Image">
                 <p>EXAMPLE: USER NAME
                   <small>EXAMPLE: SMALL INFO</small>
                 </p>

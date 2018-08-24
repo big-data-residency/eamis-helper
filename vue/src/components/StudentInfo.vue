@@ -4,7 +4,7 @@
       <div class="col-md-3">
         <div class="box box-primary">
           <div class="box-body box-profile">
-            <img src="./../assets/default-avatar.jpg" alt="User Avatar"
+            <img src="/static/images/avatars/default.jpg" alt="User Avatar"
                  class="profile-user-img img-responsive img-circle">
             <h3 class="profile-username">EXAMPLE: USERNAME</h3>
             <button id="avatar-update-btn" class="btn btn-primary btn-block">
