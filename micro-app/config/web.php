@@ -12,6 +12,7 @@ $config = [
             'cookieValidationKey' => env("COOKIE_VALIDATION_KEY"),
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
+                'text/json' => '\yii\web\JsonParser'
             ],
         ],
         'response' => [
@@ -23,7 +24,7 @@ $config = [
                     'encodeOptions' => JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
                 ]
             ],
-            'on beforeSend' => function ($event) {
+            /*'on beforeSend' => function ($event) {
                 $response = $event->sender;
                 if ($response->data != null) {
                     if($response->format == \yii\web\Response::FORMAT_JSON || $response->format == \yii\web\Response::FORMAT_XML) {
@@ -34,7 +35,7 @@ $config = [
                         $response->statusCode = 200;
                     }
                 }
-            }
+            }*/
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -43,9 +44,12 @@ $config = [
             'rules' => [
 //               指明 siteController下的action
                 'site/<action>' => 'site/<action>',
+                'login/<action>' => 'login/<action>',
+                'auth/<action>' => 'auth/<action>',
+                'login' => 'login/login',
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => ['teacher', 'student'],
+                    'controller' => ['teacher', 'student', 'login'],
                     'pluralize' => false
                 ],
             ],

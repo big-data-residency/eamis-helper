@@ -1,15 +1,22 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import getters from './getters';
+
+import student from './modules/student';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  strict: true,
+  modules: {
+    student,
+  },
   state: {
     logoText: "eamis-helper",
     logoMiniText: "e-helper",
     menus: [
       {
-        path: "/student-info",
+        path: "/StudentInfo",
         icon: "user",
         text: "用户首页"
       }, {
@@ -25,24 +32,22 @@ export default new Vuex.Store({
         icon: "edit",
         text: "推荐课程"
       }, {
-        path: "javascript:void(0);",
+        path: "/all-students",
         icon: "heart",
         text: "查看所有用户信息"
       }
     ],
     studentTab: [
       {
-        link: '/student-info/timeline',
+        link: '/StudentInfo/timeline',
         title: '时间线',
       }, {
-        link: '/student-info/setting',
+        link: '/StudentInfo/setting',
         title: '设置',
       }
     ]
   },
-  getters: {
-
-  },
+  getters: getters,
   mutations: {
 
   },

@@ -41,9 +41,7 @@ class SiteController extends Controller{
     }
 
     public function actionError(){
-        $exception = Yii::$app->errorHandler->exception;
-//	    \Yii::$app->response->content = $exception;
+        $exception = \Yii::$app->errorHandler->exception;
         return $exception;
-
     }
 }

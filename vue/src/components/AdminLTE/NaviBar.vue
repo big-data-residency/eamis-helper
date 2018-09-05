@@ -49,7 +49,7 @@
                   <a href="javascript:void(0);" class="btn btn-default btn-flat">个人信息</a>
                 </div>
                 <div class="pull-right">
-                  <a href="javascript:void(0);" class="btn btn-default btn-flat">退出登录</a>
+                  <button class="btn btn-default btn-flat" @click="logout">退出登录</button>
                 </div>
               </li>
             </ul>
@@ -62,6 +62,8 @@
 </template>
 
 <script>
+  import Auth from '@/utils/auth';
+
   export default {
     name: "NaviBar",
     props: {
@@ -72,6 +74,13 @@
       logoMiniText: {
         default: "",
         type: String
+      }
+    },
+
+    methods:{
+      logout: function () {
+        Auth.Logout();
+        this.$router.push('/login');
       }
     }
   }

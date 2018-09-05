@@ -4,7 +4,7 @@
       <swiper-slide :key="index" style="width:100%;">
         <!--:style="'background-position: center;background-size: cover;height=200px;' + 'background: url(' + require('./../assets/banner/banner-'+(index+1)+'.png') + ');'"-->
         <!--  webpack 打包的时候图片的路径会变，需要require过来  -->
-        <img :alt="'Banner-' + slide" :src="require('./../assets/banner/banner-' + (index+1) +'.png')" style="margin: 0 auto;"/>
+        <img :alt="'Banner-' + slide" :src="require('@/assets/banner/banner-' + (index+1) +'.png')"/>
       </swiper-slide>
     </template>
     <div slot="pagination" class="swiper-pagination"></div>

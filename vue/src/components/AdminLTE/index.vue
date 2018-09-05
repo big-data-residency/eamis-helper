@@ -4,7 +4,7 @@
     <SideBar :menus="menus"/>
     <div class="content-wrapper">
       <section class="content-header">
-        {{ $route.name }}
+        <h1>{{ $route.name }}&nbsp;</h1>
         <BreadCrumb></BreadCrumb>
       </section>
       <section class="content">

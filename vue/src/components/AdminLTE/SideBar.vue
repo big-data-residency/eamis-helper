@@ -49,6 +49,10 @@
         return location.pathname;
       }
     },
+
+    mounted: function () {
+      console.log(this.$route);
+    }
   }
 </script>
 

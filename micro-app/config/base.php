@@ -43,17 +43,17 @@ return [
                     'logVars' => [],
                     'maxFileSize' => 40
                 ],
-//                把日志记录到数据库中
-//                'db' => [
-//                    'class' => 'yii\log\DbTarget',
-//                    'levels' => ['info', 'error']
-//                ]
+                /*把日志记录到数据库中
+                'db' => [
+                    'class' => 'yii\log\DbTarget',
+                    'levels' => ['info', 'error']
+                ]*/
             ]
         ],
 
-//        'user' => [
-//            'identityClass' => 'app\models\Student'
-//        ]
+        'user' => [
+            'identityClass' => 'app\models\Student'
+        ]
 
     ]
 ];

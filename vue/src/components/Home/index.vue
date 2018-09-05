@@ -1,17 +1,17 @@
 <template>
   <div class="container">
-    <div class="row clearfix">
+    <div class="row">
       <div class="col-md-12">
+        <!--<br />-->
         <Banner></Banner>
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
 
-  import Banner from './Banner';
+  import Banner from './Carousel';
   import Desk from './Desk';
 
   export default {

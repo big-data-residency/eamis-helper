@@ -21,7 +21,7 @@
       submit: function () {
         this.$axios({
           type: 'get',
-          url: '/student/index',
+          url: '/StudentInfo/index',
           data: {},
         })
       }

@@ -1,7 +1,9 @@
 <template>
   <ol class="breadcrumb">
-    <i class="fa fa-home"></i>
-    <template v-for="(item, index) in $route.meta.crumbList">
+    <router-link to="/">
+      <i class="fa fa-home"></i>
+    </router-link>
+    <template v-for="(item, index) in $route.matched">
       <li :key="index">
         <router-link :to="item.path ===''? '/' : item.path">
           {{ item.name }}
@@ -18,5 +20,7 @@
 </script>
 
 <style scoped>
-
+  ol > a {
+    color: #444;
+  }
 </style>

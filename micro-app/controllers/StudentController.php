@@ -3,12 +3,7 @@
 namespace app\controllers;
 
 use app\models\Student;
-
-/**
- * Class StudentController
- * @package app\controllers
- */
-
+use yii\filters\auth\HttpBearerAuth;
 /**
  * @SWG\Tag(
  *   name = "student",
@@ -17,8 +12,6 @@ use app\models\Student;
  */
 class StudentController extends ApiController {
     public $modelClass = 'app\models\Student';
-    public $defaultAction = 'index';
-    // behaviors is overwritten in app\ApiController
 
     /**
      * @SWG\GET(
@@ -31,6 +24,9 @@ class StudentController extends ApiController {
      * )
      */
     public function actionIndex(){
+        return [
+            'success' => false
+        ];
     }
 
 
