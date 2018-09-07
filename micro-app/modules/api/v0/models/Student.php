@@ -3,8 +3,6 @@
 namespace app\modules\api\v0\models;
 
 use Yii;
-use yii\behaviors\AttributeBehavior;
-use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;

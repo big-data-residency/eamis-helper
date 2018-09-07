@@ -24,18 +24,6 @@ $config = [
                     'encodeOptions' => JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
                 ]
             ],
-            /*'on beforeSend' => function ($event) {
-                $response = $event->sender;
-                if ($response->data != null) {
-                    if($response->format == \yii\web\Response::FORMAT_JSON || $response->format == \yii\web\Response::FORMAT_XML) {
-                        $response->data = yii\helpers\ArrayHelper::merge([
-                            'success' => $response->isSuccessful,
-                        ], $response->data);
-
-                        $response->statusCode = 200;
-                    }
-                }
-            }*/
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,

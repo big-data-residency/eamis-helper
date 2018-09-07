@@ -53,7 +53,7 @@ return [
         ],
 
         'user' => [
-            'identityClass' => 'app\models\Student',
+            'identityClass' => 'app\modules\api\v0\models\Student',
             'enableAutoLogin' => true,
             'enableSession' => false,
 
