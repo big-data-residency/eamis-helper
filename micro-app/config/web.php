@@ -44,12 +44,11 @@ $config = [
             'rules' => [
 //               指明 siteController下的action
                 'site/<action>' => 'site/<action>',
-                'login/<action>' => 'login/<action>',
-                'auth/<action>' => 'auth/<action>',
-                'student/<action>' => 'student/<action>',
+
+                'api/<module>/<controller>/<action>' => '<module>/<controller>/<action>',
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => ['teacher', 'student', 'login'],
+                    'controller' => ['v0/teacher', 'v0/student', 'v0/login', 'v0/auth'],
                     'pluralize' => false
                 ],
             ],

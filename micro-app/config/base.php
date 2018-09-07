@@ -18,7 +18,8 @@ return [
         '@bower' => '@vendor/bower-asset',
         '@apiRoot' => '@app/controllers',
         '@webRoot' => '@app/web',
-        '@runtime' => '@app/runtime'
+        '@runtime' => '@app/runtime',
+        '@api' => '@app/modules/api'
     ],
     'components' => [
         'log' => [
@@ -60,8 +61,11 @@ return [
 
     ],
     'modules' => [
-        'Api' => [
-            'class' => 'app\modules\api'
-        ]
+        'v0' => [
+            'class' => 'app\modules\api\v0\Module',
+            'modules' => [
+                'class' => 'app\modules\api\v0\Module'
+            ]
+        ],
     ]
 ];
