@@ -26,18 +26,32 @@ axios.interceptors.response.use(
     if (error.response) {
       let err = error.response.data;
       switch (error.response.status) {
+        /**
+         * 权限错误
+         */
         case 401:
           Auth.Logout();
           router.replace({
             path: '/login',
           });
+          alert('您还未登录');
           break;
 
+        /**
+         * 服务器错误
+         */
         case 500:
           console.log(err.message);
           if (err['stack-trace'] && err['stack-trace'].length > 0) {
             err['stack-trace'].forEach(stack => console.log(stack))
           }
+          break;
+
+        /**
+         * 表单格式错误
+         */
+        case 422:
+          err.forEach(e => alert(e.message));
           break;
 
         default:

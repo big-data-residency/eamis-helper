@@ -1,15 +1,40 @@
 export default {
   state: {
     displayInfo: {
-      'id': 'id',
-      'studentName': '学生姓名',
-      'gender': '性别',
-      'nickName': '昵称',
-      'studentNumber': '学号',
-      'grade': '年级',
-      'majorName': '专业',
-      'collegeName': '学院',
-      'privilege': '权限'
+      'id': {
+        label: 'id',
+        width: '60%',
+      },
+      'studentName': {
+        label: '学生姓名',
+        width: '100%'
+      },
+      'gender': {
+        label: '性别',
+        width: '75%'
+      },
+      'nickName': {
+        label: '昵称',
+        width: ''
+      },
+      'studentNumber': {
+        label: '学号',
+        width: '80%'
+      },
+      'grade': {
+        label: '年级',
+        width: '75%'
+      },
+      'majorName': {
+        label: '专业'
+      },
+      'collegeName': {
+        label: '学院'
+      },
+      'privilege': {
+        label: '权限',
+        width: '75%'
+      }
     }
   },
 

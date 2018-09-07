@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\Student;
-use yii\filters\auth\HttpBearerAuth;
+
 /**
  * @SWG\Tag(
  *   name = "student",
@@ -23,17 +23,10 @@ class StudentController extends ApiController {
      *     )
      * )
      */
-    public function actionIndex(){
-        return [
-            'success' => false
-        ];
+
+
+    public function actionInfo(){
+        $token = \Yii::$app->request->get();
+        return Student::findIdentityByAccessToken($token);
     }
-
-
-    public function actionTest(){
-        $response = \Yii::$app->response;
-        $response->content = "test response from student controller by yii";
-        $response->format = 'json';
-    }
-
 }

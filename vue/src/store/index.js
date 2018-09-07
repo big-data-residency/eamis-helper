@@ -1,8 +1,11 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import getters from './getters';
+// import store from './../store';
 
 import student from './modules/student';
+import user from './modules/user'
+// import sideBar from './modules/sideBar';
 
 Vue.use(Vuex);
 
@@ -10,13 +13,16 @@ export default new Vuex.Store({
   strict: true,
   modules: {
     student,
+    user
+    // sideBar
   },
   state: {
+    user: {},
     logoText: "eamis-helper",
     logoMiniText: "e-helper",
     menus: [
       {
-        path: "/StudentInfo",
+        path: "/student/:id",
         icon: "user",
         text: "用户首页"
       }, {

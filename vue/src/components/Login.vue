@@ -7,7 +7,7 @@
     </div>
     <div class="login-box-body">
       <p class="login-box-msg">登录</p>
-      <form @submit.prevent="login">
+      <form id="login-form" @submit.once="login">
         <div class="form-group has-feedback">
           <input v-model="username" type="text" name="username" placeholder="请输入用户名" title="username"
                  class="form-control"/>
@@ -21,10 +21,10 @@
 
         <div class="row">
           <div class="col-md-8">
-            <input type="checkbox" title="remember-me"> Remember Me
+            <input v-model="rememberMe" type="checkbox" title="remember-me"> Remember Me
           </div>
           <div class="col-md-4">
-            <button class="btn btn-default btn-block" type="submit" @click="login">Sign in</button>
+            <button id="login-button" class="btn btn-default btn-block" type="button" @click="login">Sign in</button>
           </div>
         </div>
       </form>
@@ -33,7 +33,16 @@
 </template>
 
 <script>
+  import "admin-lte/bower_components/bootstrap/dist/js/bootstrap";
+  import "admin-lte/dist/js/adminlte";
+
+  import "admin-lte/bower_components/bootstrap/dist/css/bootstrap.css";
+  import "admin-lte/bower_components/font-awesome/css/font-awesome.css";
+  import "admin-lte/dist/css/AdminLTE.css";
+  import "admin-lte/dist/css/skins/_all-skins.min.css";
+
   import Auth from '@/utils/auth';
+
 
   export default {
     name: "Login",
@@ -41,6 +50,7 @@
       return {
         username: '',
         password: '',
+        rememberMe: false,
       }
     },
 
@@ -50,19 +60,20 @@
 
     methods: {
       login: function () {
-        let obj = {
+        this.$axios.post('/auth/login',{
           username: this.username,
-          password: this.password
-        };
-        this.$axios.post('/auth/login', obj)
-          .then((res) => {
-            if (res.data.success) {
+          password: this.password,
+          rememberMe: this.rememberMe
+        }).then((res) => {
+            if (res.data.token) {
               Auth.Login(res.data.token);
               this.$router.push({path: '/'});
             }
             else {
-              alert("密码错误");
+              alert('服务器错误');
             }
+          }).catch(err => {
+            console.log(err);
           })
       }
     }

@@ -52,8 +52,16 @@ return [
         ],
 
         'user' => [
-            'identityClass' => 'app\models\Student'
+            'identityClass' => 'app\models\Student',
+            'enableAutoLogin' => true,
+            'enableSession' => false,
+
         ]
 
+    ],
+    'modules' => [
+        'Api' => [
+            'class' => 'app\modules\api'
+        ]
     ]
 ];

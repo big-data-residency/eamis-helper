@@ -17,7 +17,8 @@ export default [
         },
         meta: {
           requireAuth: true,
-          role: ['admin, student']
+          role: ['admin, student'],
+          hidden: false
         },
       },
       {
@@ -39,7 +40,7 @@ export default [
     component: () => import('@/components/login'),
     meta: {
       requireAuth: false
-    }
+    },
   },
 
 ];

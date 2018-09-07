@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper skin-blue-light">
-    <NaviBar :logo-text="logoText" :logo-mini-text="logoMiniText"/>
-    <SideBar :menus="menus"/>
+    <NaviBar :logo-text="logoText" :logo-mini-text="logoMiniText" :user_info="user_info"/>
+    <SideBar :menus="menus" :user_info="user_info"/>
     <div class="content-wrapper">
       <section class="content-header">
         <h1>{{ $route.name }}&nbsp;</h1>
@@ -25,7 +25,7 @@
   import "admin-lte/dist/css/skins/_all-skins.min.css";
 
 
-  import {mapState} from "vuex";
+  import {mapState, mapGetters} from "vuex";
 
   import SideBar from "@/components/AdminLTE/SideBar";
   import NaviBar from "@/components/AdminLTE/NaviBar";
@@ -46,6 +46,9 @@
         "logoText",
         "logoMiniText",
         "menus"
+      ]),
+      ...mapGetters([
+        'user_info'
       ])
     }
 
@@ -53,5 +56,11 @@
 </script>
 
 <style scoped>
+  .content-wrapper {
+    height: 100%;
+  }
 
+  .wrapper {
+    overflow: hidden;
+  }
 </style>

@@ -9,26 +9,29 @@
 namespace app\controllers;
 
 
+use app\models\Login;
+use app\models\Student;
 use yii\web\Controller;
 
 class AuthController extends ApiController
 {
     public $modelClass = '';
 
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+        unset($behaviors['authenticator']);
+        return $behaviors;
+    }
+
     public function actionLogin(){
-        $request = \Yii::$app->request;
-        $username = $request->post('username');
-        $password = $request->post('password');
-        if($username == 'admin' && $password == 'admin'){
-            return [
-              'token' => 'admin_TOKEN',
-            ];
+        $model = new Login();
+        $model->load(\Yii::$app->request->post(),'');
+        if($model->validate() && $model->login()){
+            return ['token' => $model->login()];
         }
-        else{
-            return [
-                'success' => false,
-                'error' => 'login error'
-            ];
+        else {
+            return $model;
         }
     }
 

@@ -1,7 +1,9 @@
 import setting from './settting';
+import axios from 'http';
+
 export default {
-  Login(data){
-    localStorage.setItem(setting.userToken, data);
+  Login(token){
+    localStorage.setItem(setting.userToken, token);
   },
 
   authenticated(){
@@ -17,3 +19,4 @@ export default {
     localStorage.setItem(setting.userToken, '');
   }
 }
+

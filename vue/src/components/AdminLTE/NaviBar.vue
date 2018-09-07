@@ -10,7 +10,7 @@
         <span class="sr-only">Toggle navigation</span>
       </a>
 
-      <!-- left-top -->
+      <!-- right-top -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li class="dropdown notifications-menu">
@@ -34,13 +34,13 @@
           <li class="dropdown user user-menu">
             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
               <img src="/static/images/avatars/default.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">EXAMPLE: USERNAME<!-- TODO --></span>
+              <span class="hidden-xs">{{ user_info.nickName }}<!-- TODO --></span>
             </a>
             <ul class="dropdown-menu">
               <li class="user-header">
                 <img src="/static/images/avatars/default.jpg" class="img-circle" alt="User Image">
-                <p>EXAMPLE: USER NAME
-                  <small>EXAMPLE: SMALL INFO</small>
+                <p>昵称：{{ user_info.nickName }}
+                  <small>学号：{{ user_info.studentNumber }}</small>
                 </p>
               </li>
               <!--    -->
@@ -74,10 +74,16 @@
       logoMiniText: {
         default: "",
         type: String
-      }
+      },
+      user_info: {
+        type: Object,
+        default: function(){
+          return {}
+        }
+      },
     },
 
-    methods:{
+    methods: {
       logout: function () {
         Auth.Logout();
         this.$router.push('/login');

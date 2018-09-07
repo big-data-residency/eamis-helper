@@ -26,8 +26,6 @@ class ApiController extends ActiveController
     {
 
         $behaviors = parent::behaviors();
-        // 去除用户认证
-        unset($behaviors['authenticator']);
 
         $behaviors['corsFilter'] = [
           'class' => Cors::className(),
@@ -49,6 +47,9 @@ class ApiController extends ActiveController
               'application/json' => Response::FORMAT_JSON,
           ]
         ];
+
+        // 去除用户认证
+        unset($behaviors['authenticator']);
 
         if (\Yii::$app->getRequest()->getMethod() !== 'OPTION') {
             $behaviors['authenticator'] = [

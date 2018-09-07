@@ -41,6 +41,9 @@ use yii\web\Linkable;
  */
 class Student extends ActiveRecord implements Linkable, IdentityInterface
 {
+    const STATUS_DELETE = 1;
+    const STATUS_ACTIVE = 0;
+
     /**
      * {@inheritdoc}
      */
@@ -188,6 +191,25 @@ class Student extends ActiveRecord implements Linkable, IdentityInterface
         ];
     }
 
+
+
+    /**
+     * Identity interface
+     */
+    public function generateAccessToken(){
+        $this->access_token = Yii::$app->security->generateRandomString(40);
+        return $this->access_token;
+    }
+
+    /**
+     * Find an identity by nickName
+     * @param string $nickName
+     * @return Student|null
+     */
+    public static function findIdentityByNickName($nickName){
+        return static::findOne(['nickName' => $nickName, 'deleteStatus' => Student::STATUS_ACTIVE]);
+    }
+
     /**
      * Finds an identity by the given ID.
      * @param string|int $id the ID to be looked for
@@ -251,28 +273,6 @@ class Student extends ActiveRecord implements Linkable, IdentityInterface
     public function validateAuthKey($authKey)
     {
         return $this->authKey === $authKey;
-    }
-
-    public function behaviors()
-    {
-        return [
-            TimestampBehavior::className(),
-            'auth_key' => [
-                'class' => AttributeBehavior::className(),
-                'attributes' => [
-                    ActiveRecord::EVENT_BEFORE_INSERT => 'auth_key'
-                ],
-                'value' => \Yii::$app->getSecurity()->generateRandomString(),
-            ],
-            'access_token' => [
-                'class' => AttributeBehavior::className(),
-                'attributes' => [
-                    ActiveRecord::EVENT_BEFORE_INSERT => 'access_token',
-                ],
-                'value' => \Yii::$app->getSecurity()->generateRandomString()
-            ],
-
-        ];
     }
 
 }

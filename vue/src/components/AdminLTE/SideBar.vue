@@ -5,8 +5,8 @@
         <div class="pull-left image">
           <img src="/static/images/avatars/default.jpg" class="img-circle" alt="User Image">
         </div>
-        <div class="pull-right">
-          <p>EXAMPLE: USER NAME</p>
+        <div class="pull-right" style="width: 65%">
+          <p>{{ user_info.nickName }}</p>
           <a href="javascript:void(0);">
             <i class="fa fa-circle text-success">
               Online
@@ -41,6 +41,10 @@
         default: function () {
           return [];
         }
+      },
+      user_info: {
+        type: Object,
+        default: () => {}
       }
     },
     computed: {

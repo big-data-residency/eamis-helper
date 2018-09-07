@@ -46,7 +46,7 @@ $config = [
                 'site/<action>' => 'site/<action>',
                 'login/<action>' => 'login/<action>',
                 'auth/<action>' => 'auth/<action>',
-                'login' => 'login/login',
+                'student/<action>' => 'student/<action>',
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => ['teacher', 'student', 'login'],
